@@ -3,6 +3,8 @@
 Aplicación Android escrita en **Kotlin** que explica, de forma sencilla, el concepto de **ViewModel**.
 El nombre visible de la app en el teléfono es **ViewModel**.
 
+Repositorio: https://github.com/lxcruz404/ViewModel
+
 Trabajo académico. Enunciado:
 
 > «Crear una aplicación móvil en Kotlin, donde se explique el concepto de ViewModel. Debe ser una aplicación sencilla. Donde solo haya un viewmodel y por mucho dos view.»
@@ -82,8 +84,8 @@ El estado del contador se expone con **`StateFlow`** (de Kotlin), y la pantalla 
 ## Cómo abrirlo en Android Studio
 
 1. Descarga el proyecto: botón verde **Code → Download ZIP** en GitHub y descomprímelo, o usa
-   `git clone https://github.com/lxcruz404/ViewModelFacil.git`.
-2. En Android Studio: **File → Open…** y elige la carpeta descargada (`ViewModelFacil`, el nombre técnico del repositorio).
+   `git clone https://github.com/lxcruz404/ViewModel.git`.
+2. En Android Studio: **File → Open…** y elige la carpeta descargada (`ViewModel`, o `ViewModel-main` si usaste el ZIP).
 3. Espera a que termine la sincronización de Gradle (barra inferior).
 4. Elige un emulador o teléfono arriba y pulsa **Run ▶**.
 
@@ -128,7 +130,7 @@ app/build/outputs/apk/debug/app-debug.apk
 ## Estructura de archivos importantes
 
 ```
-ViewModelFacil/
+ViewModel/
 ├── app/
 │   ├── build.gradle.kts                  ← Configuración y librerías de la app
 │   └── src/
