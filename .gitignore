@@ -1,0 +1,31 @@
+# Archivos generados por Gradle y Kotlin
+.gradle/
+.kotlin/
+build/
+/app/build/
+
+# Configuración local (ruta del SDK en este PC; no debe subirse)
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Registros y archivos temporales
+*.log
+*.tmp
+
+# Claves de firma y secretos (nunca se suben)
+*.jks
+*.keystore
+keystore.properties
+.env
+*.pem

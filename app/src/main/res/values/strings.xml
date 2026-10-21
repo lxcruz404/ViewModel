@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nombre de la app que aparece debajo del icono en el teléfono. -->
+    <string name="app_name">ViewModel Fácil</string>
+</resources>
