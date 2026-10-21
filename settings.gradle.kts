@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 }
 
 // Nombre del proyecto.
-rootProject.name = "ViewModelFacil"
+rootProject.name = "ViewModel"
 
 // El proyecto tiene un solo módulo: la carpeta "app".
 include(":app")

@@ -1,6 +1,7 @@
-# ViewModel Fácil
+# ViewModel
 
 Aplicación Android escrita en **Kotlin** que explica, de forma sencilla, el concepto de **ViewModel**.
+El nombre visible de la app en el teléfono es **ViewModel**.
 
 Trabajo académico. Enunciado:
 
@@ -73,7 +74,7 @@ El estado del contador se expone con **`StateFlow`** (de Kotlin), y la pantalla 
 
 ## Requisitos para abrir y ejecutar
 
-- **Android Studio** reciente (se probó con Android Studio 2026.2). Incluye el JDK necesario.
+- **Android Studio** reciente (el proyecto se compiló con el JDK y el SDK de Android Studio 2026.2). Incluye el JDK necesario.
 - **Android SDK** con la plataforma Android 37 (Android Studio la descarga si falta).
 - Un **emulador** o un **teléfono Android** 8.0 o superior.
 - Conexión a internet la primera vez (Gradle descarga las librerías).
@@ -82,7 +83,7 @@ El estado del contador se expone con **`StateFlow`** (de Kotlin), y la pantalla 
 
 1. Descarga el proyecto: botón verde **Code → Download ZIP** en GitHub y descomprímelo, o usa
    `git clone https://github.com/lxcruz404/ViewModelFacil.git`.
-2. En Android Studio: **File → Open…** y elige la carpeta `ViewModelFacil`.
+2. En Android Studio: **File → Open…** y elige la carpeta descargada (`ViewModelFacil`, el nombre técnico del repositorio).
 3. Espera a que termine la sincronización de Gradle (barra inferior).
 4. Elige un emulador o teléfono arriba y pulsa **Run ▶**.
 

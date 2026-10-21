@@ -4,7 +4,7 @@
         Tema básico de la ventana (fondo claro y sin barra superior).
         Los colores azul y blanco de las pantallas se definen en MainActivity.kt con Compose.
     -->
-    <style name="Theme.ViewModelFacil" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.ViewModel" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:windowBackground">@android:color/white</item>
     </style>
 </resources>
