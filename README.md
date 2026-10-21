@@ -46,15 +46,6 @@ Si vuelves a la pantalla 1 y entras otra vez, el número **se conserva**, porque
 
 ---
 
-## ¿Por qué hay un solo ViewModel?
-
-1. El profesor pidió **solo un ViewModel**.
-2. Solo la pantalla 2 tiene datos que cambian (el contador). La pantalla 1 solo muestra texto, así que **no necesita** ViewModel.
-3. La pantalla que se está mostrando (1 o 2) se guarda con una variable sencilla de Compose (`rememberSaveable`) en `MainActivity`, sin usar otro ViewModel ni una librería de navegación.
-
-**Interpretación de «por mucho dos view»:** se entendió como **dos pantallas** como máximo. Por eso la app tiene exactamente dos funciones de pantalla y no crea componentes visuales propios adicionales.
-
----
 
 ## Tecnologías utilizadas
 
@@ -71,59 +62,6 @@ Si vuelves a la pantalla 1 y entras otra vez, el número **se conserva**, porque
 | Pruebas | JUnit 4 y Compose UI Test |
 
 El estado del contador se expone con **`StateFlow`** (de Kotlin), y la pantalla lo observa con `collectAsState()`.
-
----
-
-## Requisitos para abrir y ejecutar
-
-- **Android Studio** reciente (el proyecto se compiló con el JDK y el SDK de Android Studio 2026.2). Incluye el JDK necesario.
-- **Android SDK** con la plataforma Android 37 (Android Studio la descarga si falta).
-- Un **emulador** o un **teléfono Android** 8.0 o superior.
-- Conexión a internet la primera vez (Gradle descarga las librerías).
-
-## Cómo abrirlo en Android Studio
-
-1. Descarga el proyecto: botón verde **Code → Download ZIP** en GitHub y descomprímelo, o usa
-   `git clone https://github.com/lxcruz404/ViewModel.git`.
-2. En Android Studio: **File → Open…** y elige la carpeta descargada (`ViewModel`, o `ViewModel-main` si usaste el ZIP).
-3. Espera a que termine la sincronización de Gradle (barra inferior).
-4. Elige un emulador o teléfono arriba y pulsa **Run ▶**.
-
-## Cómo compilarlo desde la terminal
-
-En Windows (dentro de la carpeta del proyecto):
-
-```bash
-gradlew.bat assembleDebug
-```
-
-En macOS / Linux:
-
-```bash
-./gradlew assembleDebug
-```
-
-Pruebas unitarias (en el PC, sin emulador):
-
-```bash
-gradlew.bat testDebugUnitTest
-```
-
-Pruebas de interfaz (con un emulador abierto o un teléfono conectado):
-
-```bash
-gradlew.bat connectedDebugAndroidTest
-```
-
-## ¿Dónde queda el APK?
-
-Después de compilar, el APK de depuración se genera en:
-
-```
-app/build/outputs/apk/debug/app-debug.apk
-```
-
-(La carpeta `build/` no se sube a GitHub; se crea al compilar.)
 
 ---
 
@@ -149,26 +87,8 @@ ViewModel/
 └── README.md
 ```
 
----
 
-## Funcionamiento paso a paso
-
-1. **Abres la app.** Android crea `MainActivity` y ejecuta `onCreate`.
-2. **`MainActivity` pide el ViewModel** con `viewModel()`. Como es la primera vez, Android crea un `ContadorViewModel` nuevo, con el contador en `0`.
-3. **Se muestra la pantalla 1**, porque la variable `mostrarContador` empieza en `false`.
-4. **Pulsas «Probar ejemplo».** Se ejecuta `mostrarContador.value = true` y Compose dibuja la pantalla 2.
-5. **La pantalla 2 observa el contador** con `contadorViewModel.contador.collectAsState()` y muestra `0`.
-6. **Pulsas «+1».** El botón llama a `contadorViewModel.sumarUno()`. El ViewModel hace `0 + 1` y guarda `1`.
-7. **La pantalla se actualiza sola** y muestra `1`, porque está observando el `StateFlow`.
-8. **Giras el teléfono.** Android destruye y vuelve a crear `MainActivity`. `viewModel()` devuelve **el mismo** `ContadorViewModel`, que sigue teniendo `1`. Además, `rememberSaveable` recuerda que estabas en la pantalla 2.
-9. **Pulsas «Volver».** Se ejecuta `mostrarContador.value = false` y aparece la pantalla 1. El ViewModel sigue vivo.
-10. **Vuelves a entrar.** El contador sigue en `1`.
-
-Ejemplo: pulsas «+1» tres veces → `3`. Giras el teléfono → sigue `3`. Pulsas «Reiniciar» → `0`.
-
----
-
-## Cómo explicar este código al profesor
+## Cómo esta hecho este codigo
 
 **1. ¿Qué es Kotlin y por qué se utilizó?**
 Kotlin es el lenguaje de programación recomendado por Google para crear apps Android. Es moderno, más corto que Java y lo pidió el enunciado. Toda la app (pantallas, ViewModel y pruebas) está en Kotlin.
